@@ -3,7 +3,7 @@ import firebase from '../../firebase';
 import { connect } from 'react-redux';
 import {setColors} from '../../actions';
 import { Sidebar, Menu, Divider, Button, Modal, Icon, Label, Segment } from 'semantic-ui-react';
-import { SliderPicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 
 class ColorPanel extends Component {
   state = {
@@ -105,10 +105,10 @@ class ColorPanel extends Component {
         {/* Color Picker Modal */}
         <Modal basic open={modal} onClose={this.closeModal}>
           <Modal.Header>Choose App Colors</Modal.Header>
-          <Modal.Content>
+          <Modal.Content align='center'>
             <Segment inverted>
               <Label content='Primary Color' />
-              <SliderPicker 
+              <SketchPicker 
                 color={primary}
                 onChange={this.handleChangePrimary} 
               />
@@ -116,7 +116,7 @@ class ColorPanel extends Component {
 
             <Segment inverted>
               <Label content='Secondary Color' />
-              <SliderPicker 
+              <SketchPicker 
                 color={secondary}
                 onChange={this.handleChangeSecondary} 
               />
